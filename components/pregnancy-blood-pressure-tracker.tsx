@@ -410,7 +410,7 @@ export default function PregnancyBloodPressureTracker() {
               </div>
               
               <div>
-                <Label>Symptoms (select any you're experiencing)</Label>
+                <Label>Symptoms (select any you&apos;re experiencing)</Label>
                 <div className="grid grid-cols-2 gap-2 mt-2">
                   {availableSymptoms.map(symptom => (
                     <Button

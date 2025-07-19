@@ -58,7 +58,7 @@ export default function Onboarding() {
           <div className="flex justify-center mb-4">
             <Heart className="w-12 h-12 text-pink-500" />
           </div>
-          <CardTitle className="text-2xl font-bold">Welcome! Let's Set Up Your Profile</CardTitle>
+          <CardTitle className="text-2xl font-bold">Welcome! Let&apos;s Set Up Your Profile</CardTitle>
           <CardDescription>
             Help us personalize your pregnancy blood pressure monitoring experience
           </CardDescription>
@@ -126,7 +126,7 @@ export default function Onboarding() {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="yes">Yes, this is my first</SelectItem>
-                    <SelectItem value="no">No, I've been pregnant before</SelectItem>
+                    <SelectItem value="no">No, I&apos;ve been pregnant before</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
