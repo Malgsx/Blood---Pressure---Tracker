@@ -1,7 +1,7 @@
 'use client'
 
-import { signIn, getProviders } from 'next-auth/react'
-import { useEffect, useState } from 'react'
+import { signIn } from 'next-auth/react'
+import { useState } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -9,12 +9,7 @@ import { Label } from '@/components/ui/label'
 import { Heart, Mail } from 'lucide-react'
 
 export default function SignIn() {
-  const [providers, setProviders] = useState(null)
   const [email, setEmail] = useState('')
-
-  useEffect(() => {
-    getProviders().then(setProviders)
-  }, [])
 
   const handleEmailSignIn = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -54,20 +49,13 @@ export default function SignIn() {
             </Button>
           </form>
 
-          {providers && Object.values(providers).map((provider: any) => {
-            if (provider.name === 'Email') return null
-            
-            return (
-              <Button
-                key={provider.name}
-                onClick={() => signIn(provider.id, { callbackUrl: '/onboarding' })}
-                variant="outline"
-                className="w-full"
-              >
-                Sign in with {provider.name}
-              </Button>
-            )
-          })}
+          <Button
+            onClick={() => signIn('google', { callbackUrl: '/onboarding' })}
+            variant="outline"
+            className="w-full"
+          >
+            Sign in with Google
+          </Button>
 
           <div className="text-xs text-gray-500 text-center mt-4">
             By signing in, you agree to our Terms of Service and Privacy Policy.
